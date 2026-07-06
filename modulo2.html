@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 2 — Acessibilidade Atitudinal | Capacitação CMWe</title>
+<meta name="description" content="Módulo 2 do Portal de Treinamento Capacitação CMWe: Acessibilidade Atitudinal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">
+      <span class="logo-badge" aria-hidden="true">CM</span>
+      Capacitação CMWe
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="modulo1.html">Módulo 1</a></li>
+        <li><a href="modulo2.html" aria-current="page">Módulo 2</a></li>
+        <li><a href="modulo3.html">Módulo 3</a></li>
+        <li><a href="modulo4.html">Módulo 4</a></li>
+        <li><a href="modulo5.html">Módulo 5</a></li>
+        <li><a href="modulo6.html">Módulo 6</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="a11y-toggle" data-a11y-toggle aria-pressed="false" aria-label="Alternar modo de acessibilidade">
+        <svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a10 10 0 0 0 0 20z" fill="currentColor" stroke="none"></path></svg>
+      </button>
+      <button type="button" class="nav-toggle" data-nav-toggle aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menu de navegação">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo-principal">
+
+  <section class="module-hero">
+    <span class="module-tag">Módulo 2</span>
+    <h1>♿ Acessibilidade Atitudinal</h1>
+  </section>
+
+  <div class="lesson-flow">
+    <a class="back-link" href="index.html">&larr; Voltar para todos os módulos</a>
+
+    <div class="module-content">
+      <div class="module-media-col">
+        <section class="lesson-step" aria-labelledby="passo-video">
+          <h2 id="passo-video">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+            1. Assista ao Vídeo
+          </h2>
+          <p>Entenda como atitudes, palavras e comportamentos podem incluir ou excluir pessoas com deficiência.</p>
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/COLOQUE_AQUI_O_ID_DO_VIDEO_MODULO_2" title="Vídeo do Módulo 2: Acessibilidade Atitudinal" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </section>
+
+        <section class="lesson-step" aria-labelledby="passo-pdf">
+          <h2 id="passo-pdf">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+            2. Leia o PDF
+          </h2>
+          <a class="pdf-link" href="#" onclick="return false;">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+            Abrir PDF — Acessibilidade Atitudinal
+          </a>
+        </section>
+      </div>
+
+      <aside class="instruction-card" aria-labelledby="passo-formulario">
+        <h2 id="passo-formulario">
+          <svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"></path><line x1="8" y1="9" x2="16" y2="9"></line><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="12" y2="17"></line></svg>
+          3. Preencha o Formulário
+        </h2>
+        <p>Depois de assistir ao vídeo e ler o material de apoio, conclua este módulo respondendo ao formulário abaixo.</p>
+        <ul>
+          <li>Assista ao vídeo com atenção.</li>
+          <li>Leia o PDF de apoio, se necessário.</li>
+          <li>Clique no botão e responda ao formulário para concluir o módulo.</li>
+        </ul>
+        <a class="btn-start" href="COLOQUE_AQUI_O_LINK_DO_GOOGLE_FORMS_MODULO_2" target="_blank" rel="noopener noreferrer">Abrir Formulário do Módulo 2</a>
+      </aside>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <p>CMWe Capacitação 2024</p>
+</footer>
+
+<div class="a11y-float" aria-hidden="true" title="Ícone de acessibilidade">
+  <svg viewBox="0 0 24 24"><circle cx="12" cy="4" r="2"></circle><path d="M19 7h-5.5l-.7-1.4A2 2 0 0 0 11 4.5H9a1 1 0 0 0 0 2h1.7l1 2-3.2 1.6a1 1 0 0 0-.5 1.3l3 6a1 1 0 1 0 1.8-.9L10 11l2.6-1.3L14 12v6a1 1 0 0 0 2 0v-6.5l-1.4-2.8L16 8h3a1 1 0 0 0 0-2z"></path></svg>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
