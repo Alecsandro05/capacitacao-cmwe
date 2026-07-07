@@ -2,11 +2,10 @@
   "use strict";
 
   var STORAGE_KEY = "cmwe-theme";
-  var THEMES = ["padrao", "alto-contraste", "daltonismo"];
+  var THEMES = ["padrao", "alto-contraste"];
   var THEME_LABELS = {
     "padrao": "Modo padrão",
-    "alto-contraste": "Alto contraste",
-    "daltonismo": "Modo daltonismo"
+    "alto-contraste": "Alto contraste"
   };
 
   function applyTheme(theme) {
@@ -26,7 +25,8 @@
 
   function getStoredTheme() {
     try {
-      return localStorage.getItem(STORAGE_KEY) || "padrao";
+      var stored = localStorage.getItem(STORAGE_KEY);
+      return THEMES.indexOf(stored) !== -1 ? stored : "padrao";
     } catch (e) {
       return "padrao";
     }

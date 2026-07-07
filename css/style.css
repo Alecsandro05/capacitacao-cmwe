@@ -43,20 +43,6 @@
   --border-soft: rgba(255,255,255,0.35);
 }
 
-/* ---------- Tema: Daltonismo (azul / laranja - seguro p/ deuteranopia/protanopia) ---------- */
-[data-theme="daltonismo"]{
-  --bg: #101820;
-  --bg-elevated: #17212b;
-  --card-bg: #16232f;
-  --text: #ffffff;
-  --text-muted: #d7e3ec;
-  --accent: #2f9bff;
-  --accent-dark: #1c76d1;
-  --accent-contrast-text: #ffffff;
-  --focus-ring: #ff9f1c;
-  --border-soft: rgba(255,255,255,0.18);
-}
-
 *, *::before, *::after{ box-sizing: border-box; }
 
 html{ scroll-behavior: smooth; }
@@ -78,9 +64,8 @@ body{
   transition: background-color .25s ease, color .25s ease;
 }
 
-/* Nos temas de acessibilidade o fundo é liso, sem brilho decorativo */
-[data-theme="alto-contraste"] body,
-[data-theme="daltonismo"] body{
+/* No tema de alto contraste o fundo é liso, sem brilho decorativo */
+[data-theme="alto-contraste"] body{
   background-image: none;
 }
 
@@ -134,8 +119,7 @@ p{ margin: 0 0 1em; }
   top: 0;
   z-index: 100;
 }
-[data-theme="alto-contraste"] .site-header,
-[data-theme="daltonismo"] .site-header{
+[data-theme="alto-contraste"] .site-header{
   background-color: var(--bg-elevated);
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
@@ -158,23 +142,15 @@ p{ margin: 0 0 1em; }
   color: var(--text);
   flex-shrink: 0;
 }
-.logo-badge{
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--accent-contrast-text);
-  font-weight: 800;
-  font-size: .8rem;
+.logo img{
+  height: 60px;
+  width: auto;
   flex-shrink: 0;
 }
 .main-nav ul{
   list-style: none;
   display: flex;
-  gap: 1.6rem;
+  gap: 1.15rem;
   margin: 0;
   padding: 0;
 }
@@ -183,9 +159,10 @@ p{ margin: 0 0 1em; }
   position: relative;
   padding: .3rem 0;
   text-decoration: none;
-  font-size: .9rem;
+  font-size: .85rem;
   font-weight: 500;
   color: var(--text-muted);
+  white-space: nowrap;
 }
 .main-nav a::after{
   content: "";
@@ -214,23 +191,6 @@ p{ margin: 0 0 1em; }
   flex-shrink: 0;
 }
 
-/* Botão de acessibilidade (troca de tema) — ícone limpo */
-.a11y-toggle{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  background: transparent;
-  border: 1px solid var(--border-soft);
-  color: var(--text);
-  border-radius: 50%;
-  cursor: pointer;
-  padding: 0;
-}
-.a11y-toggle:hover, .a11y-toggle:focus-visible{ border-color: var(--accent); color: var(--accent); }
-.a11y-toggle svg{ width: 19px; height: 19px; flex-shrink: 0; }
-
 /* Botão hamburguer (somente mobile) */
 .nav-toggle{
   display: none;
@@ -255,8 +215,11 @@ p{ margin: 0 0 1em; }
 .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2){ opacity: 0; }
 .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
 
-@media (max-width: 779px){
+/* Com os nomes completos dos módulos no menu, o layout desktop
+   só cabe acima de 1200px — abaixo disso usamos o menu hamburguer */
+@media (max-width: 1199px){
   .nav-toggle{ display: flex; }
+  .logo img{ height: 48px; }
   .main-nav{
     position: absolute;
     top: 100%;
@@ -268,7 +231,7 @@ p{ margin: 0 0 1em; }
     overflow: hidden;
     transition: max-height .25s ease;
   }
-  .main-nav.is-open{ max-height: 420px; }
+  .main-nav.is-open{ max-height: 520px; }
   .main-nav ul{
     flex-direction: column;
     gap: 0;
@@ -349,12 +312,24 @@ p{ margin: 0 0 1em; }
   stroke: var(--text);
   fill: none;
 }
+.guide-step .step-label{
+  display: block;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: 1.78rem;
+  font-weight: 700;
+  margin-bottom: .35rem;
+}
 .guide-step p{
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   margin: 0;
 }
 
+.guide-step .docs{
+  font-size: 0.9rem;
+}
 /* ---------- Grade de módulos ---------- */
 .modules{
   padding: 1rem 1.25rem 4rem;
@@ -609,13 +584,17 @@ p{ margin: 0 0 1em; }
   text-align: center;
   position: relative;
   color: var(--text-muted);
-  font-size: .9rem;
-}
-.footer-title{
-  font-weight: 700;
-  margin-bottom: .25rem;
+  
 }
 
+.site-footer img{
+  display: block;
+  height: 75px;
+  width: auto;
+  margin: .75rem auto 0;
+}
+
+/* Botão flutuante de acessibilidade: liga/desliga o modo alto contraste */
 .a11y-float{
   position: fixed;
   right: 1.1rem;
@@ -624,13 +603,22 @@ p{ margin: 0 0 1em; }
   height: 50px;
   border-radius: 50%;
   background: #1976d2;
+  border: none;
+  padding: 0;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 14px rgba(0,0,0,.4);
   z-index: 50;
+  transition: transform .15s ease, background-color .15s ease;
 }
+.a11y-float:hover{ transform: scale(1.08); }
 .a11y-float svg{ width: 28px; height: 28px; fill: #ffffff; }
+
+/* Com o alto contraste ativo, o botão fica amarelo indicando o estado */
+[data-theme="alto-contraste"] .a11y-float{ background: var(--accent); }
+[data-theme="alto-contraste"] .a11y-float svg{ fill: #000000; }
 
 .visually-hidden{
   position: absolute;

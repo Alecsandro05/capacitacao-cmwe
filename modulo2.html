@@ -17,26 +17,22 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="logo" href="index.html">
-      <span class="logo-badge" aria-hidden="true">CM</span>
-      Capacitação CMWe
+      <img src="images/API - Logotipo (1).png" alt="logo academia inteligente CMWe">
     </a>
 
     <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
       <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="modulo1.html">Módulo 1</a></li>
-        <li><a href="modulo2.html" aria-current="page">Módulo 2</a></li>
-        <li><a href="modulo3.html">Módulo 3</a></li>
-        <li><a href="modulo4.html">Módulo 4</a></li>
-        <li><a href="modulo5.html">Módulo 5</a></li>
-        <li><a href="modulo6.html">Módulo 6</a></li>
+         <li><a href="index.html">Início</a></li>
+        <li><a href="modulo1.html">Protocolo CMWe</a></li>
+        <li><a href="modulo2.html" aria-current="page">Acessibilidade Atitudinal</a></li>
+        <li><a href="modulo3.html">Lixo Zero</a></li>
+        <li><a href="modulo4.html">Integração e Código de Conduta</a></li>
+        <li><a href="modulo5.html">Comunicação CNV</a></li>
+        <li><a href="modulo6.html">Vila do Bem</a></li>
       </ul>
     </nav>
 
     <div class="header-actions">
-      <button type="button" class="a11y-toggle" data-a11y-toggle aria-pressed="false" aria-label="Alternar modo de acessibilidade">
-        <svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a10 10 0 0 0 0 20z" fill="currentColor" stroke="none"></path></svg>
-      </button>
       <button type="button" class="nav-toggle" data-nav-toggle aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menu de navegação">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -50,7 +46,7 @@
 
   <section class="module-hero">
     <span class="module-tag">Módulo 2</span>
-    <h1>♿ Acessibilidade Atitudinal</h1>
+    <h1> Acessibilidade Atitudinal</h1>
   </section>
 
   <div class="lesson-flow">
@@ -100,13 +96,23 @@
 </main>
 
 <footer class="site-footer">
-  <p>CMWe Capacitação 2024</p>
+  
+  <img src="images/CMWe - Logo - Mono - B Off-white.png" alt="">
 </footer>
 
-<div class="a11y-float" aria-hidden="true" title="Ícone de acessibilidade">
-  <svg viewBox="0 0 24 24"><circle cx="12" cy="4" r="2"></circle><path d="M19 7h-5.5l-.7-1.4A2 2 0 0 0 11 4.5H9a1 1 0 0 0 0 2h1.7l1 2-3.2 1.6a1 1 0 0 0-.5 1.3l3 6a1 1 0 1 0 1.8-.9L10 11l2.6-1.3L14 12v6a1 1 0 0 0 2 0v-6.5l-1.4-2.8L16 8h3a1 1 0 0 0 0-2z"></path></svg>
+<button type="button" class="a11y-float" data-a11y-toggle aria-pressed="false" aria-label="Alternar modo de alto contraste">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4" r="2"></circle><path d="M19 7h-5.5l-.7-1.4A2 2 0 0 0 11 4.5H9a1 1 0 0 0 0 2h1.7l1 2-3.2 1.6a1 1 0 0 0-.5 1.3l3 6a1 1 0 1 0 1.8-.9L10 11l2.6-1.3L14 12v6a1 1 0 0 0 2 0v-6.5l-1.4-2.8L16 8h3a1 1 0 0 0 0-2z"></path></svg>
+</button>
+<div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
 </div>
-
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
 <script src="js/script.js"></script>
 </body>
 </html>
