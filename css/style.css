@@ -576,22 +576,44 @@ p{ margin: 0 0 1em; }
   text-align: center;
 }
 
-/* ---------- Footer ---------- */
+/* ---------- Footer: texto à esquerda, logo à direita ---------- */
 .site-footer{
   background: transparent;
   border-top: 1px solid var(--accent);
-  padding: 1.5rem 1.25rem;
-  text-align: center;
-  position: relative;
+  padding: 1.25rem 1.25rem;
   color: var(--text-muted);
-  
+  font-size: .9rem;
 }
-
+.footer-inner{
+  max-width: var(--max-width);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.footer-inner p{ margin: 0; }
+.footer-credit{
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+.footer-credit:hover, .footer-credit:focus-visible{ text-decoration: underline; }
+/* Linha vertical separando o texto da logo */
 .site-footer img{
   display: block;
   height: 75px;
   width: auto;
-  margin: .75rem auto 0;
+  margin: 0;
+  border-left: 1px solid var(--border-soft);
+  padding-left: 1.5rem;
+}
+/* Em telas estreitas o footer empilha e a linha some */
+@media (max-width: 620px){
+  .footer-inner{ flex-direction: column; gap: 1rem; }
+  .site-footer img{ border-left: none; padding-left: 0; }
 }
 
 /* Botão flutuante de acessibilidade: liga/desliga o modo alto contraste */
