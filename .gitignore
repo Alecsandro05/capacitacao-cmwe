@@ -1,2 +1,5 @@
 # Configurações locais do Claude Code
 .claude/
+
+# Servidor de teste local (não faz parte do site)
+servidor-local.ps1
