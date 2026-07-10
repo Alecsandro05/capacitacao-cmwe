@@ -270,65 +270,201 @@ p{ margin: 0 0 1em; }
   font-weight: 300;
 }
 
-/* ---------- Guia rápido (3 colunas) ---------- */
+/* ---------- Guia para o certificado (3 passos) ---------- */
 .guide{
-  padding: 3rem 1.25rem 3.5rem;
+  padding: 3.5rem 1.25rem 3.5rem;
+}
+.guide-kicker{
+  display: block;
+  text-align: center;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .38em;
+  font-size: .8rem;
+  font-weight: 600;
+  margin-bottom: .6rem;
 }
 .guide h2{
   text-align: center;
-  font-size: clamp(1.4rem, 3vw, 1.9rem);
-  margin-bottom: 2.2rem;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+/* Sublinhado vermelho curto abaixo do título */
+.guide h2::after{
+  content: "";
+  display: block;
+  width: 56px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+  margin: .8rem auto 0;
+}
+.guide-intro{
+  text-align: center;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin: 0 auto 2.75rem;
 }
 .guide-grid{
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.75rem;
+  gap: 2.5rem;
   max-width: var(--max-width);
   margin-inline: auto;
 }
-@media (min-width: 780px){
-  .guide-grid{ grid-template-columns: repeat(3, 1fr); }
-}
 .guide-step{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  padding: 1.75rem 1.25rem;
+  padding: 2.75rem 1.5rem 2rem;
   border: 1px solid var(--border-soft);
-  border-radius: var(--radius-lg);
+  border-radius: 20px;
   background: var(--bg-elevated);
 }
-.guide-step .icon-wrap{
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 1rem;
+/* Número do passo no canto do card */
+.step-number{
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  border: 2px solid var(--accent);
+  background: var(--accent);
+  color: var(--accent-contrast-text);
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 18px rgba(229,52,43,.45);
+}
+/* Ícone central com anel e brilho vermelho */
+.guide-step .icon-wrap{
+  width: 92px;
+  height: 92px;
+  margin: 0 auto 1.4rem;
+  border-radius: 50%;
+  border: 1px solid rgba(229,52,43,.75);
+  box-shadow: 0 0 26px rgba(229,52,43,.28), inset 0 0 14px rgba(229,52,43,.12);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .guide-step .icon-wrap svg{
-  width: 30px;
-  height: 30px;
+  width: 38px;
+  height: 38px;
   stroke: var(--text);
   fill: none;
-}
-.guide-step .step-label{
-  display: block;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: .12em;
-  font-size: 1.78rem;
-  font-weight: 700;
-  margin-bottom: .35rem;
 }
 .guide-step p{
   font-weight: 600;
   font-size: 1.2rem;
+  line-height: 1.35;
   margin: 0;
+  max-width: 260px;
 }
+.guide-step .step-note{
+  font-weight: 400;
+  font-size: .9rem;
+  color: var(--text-muted);
+  margin-top: .75rem;
+  line-height: 1.5;
+  max-width: 280px;
+}
+/* Box do certificado dentro do passo 3 */
+.cert-box{
+  display: flex;
+  gap: .8rem;
+  align-items: flex-start;
+  text-align: left;
+  margin-top: 1rem;
+  padding: .9rem 1rem;
+  border: 1px solid rgba(229,52,43,.55);
+  background: rgba(229,52,43,.07);
+  border-radius: 12px;
+}
+.cert-box svg{
+  width: 30px;
+  height: 30px;
+  stroke: var(--accent);
+  fill: none;
+  flex-shrink: 0;
+  margin-top: .1rem;
+}
+.cert-box strong{
+  display: block;
+  font-size: .95rem;
+  margin-bottom: .15rem;
+}
+.cert-box p{
+  font-size: .85rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+}
+.cert-box .highlight{ font-weight: 700; }
+/* Banner de aviso abaixo dos passos */
+.guide-alert{
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  max-width: var(--max-width);
+  margin: 2.25rem auto 0;
+  padding: 1.1rem 1.5rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  background: var(--bg-elevated);
+  text-align: left;
+}
+.guide-alert .alert-icon{
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(229,52,43,.75);
+  box-shadow: 0 0 16px rgba(229,52,43,.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.guide-alert .alert-icon svg{
+  width: 22px;
+  height: 22px;
+  stroke: var(--accent);
+  fill: none;
+}
+.guide-alert strong{ display: block; margin-bottom: .1rem; }
+.guide-alert p{
+  margin: 0;
+  color: var(--text-muted);
+  font-size: .95rem;
+  line-height: 1.5;
+}
+.guide-alert .highlight{ font-weight: 700; }
 
-.guide-step .docs{
-  font-size: 0.9rem;
+/* Desktop: 3 colunas com conectores tracejados entre os cards */
+@media (min-width: 780px){
+  .guide-grid{ grid-template-columns: repeat(3, 1fr); }
+  .guide-step:not(:last-child)::after{
+    content: "";
+    position: absolute;
+    top: 5.6rem; /* alinhado ao centro do ícone */
+    right: -2.5rem;
+    width: 2.5rem;
+    border-top: 2px dashed rgba(229,52,43,.55);
+  }
+}
+/* Mobile: banner empilhado e centralizado */
+@media (max-width: 560px){
+  .guide-alert{
+    flex-direction: column;
+    text-align: center;
+  }
 }
 /* ---------- Grade de módulos ---------- */
 .modules{
@@ -636,11 +772,17 @@ p{ margin: 0 0 1em; }
   transition: transform .15s ease, background-color .15s ease;
 }
 .a11y-float:hover{ transform: scale(1.08); }
-.a11y-float svg{ width: 28px; height: 28px; fill: #ffffff; }
+/* Logo de acessibilidade (SVG preto): filtro deixa branca sobre o fundo azul */
+.a11y-float img{
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
 
-/* Com o alto contraste ativo, o botão fica amarelo indicando o estado */
+/* Com o alto contraste ativo, o botão fica amarelo e a logo volta a ser preta */
 [data-theme="alto-contraste"] .a11y-float{ background: var(--accent); }
-[data-theme="alto-contraste"] .a11y-float svg{ fill: #000000; }
+[data-theme="alto-contraste"] .a11y-float img{ filter: none; }
 
 .visually-hidden{
   position: absolute;
