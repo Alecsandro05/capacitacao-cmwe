@@ -682,17 +682,19 @@ p{ margin: 0 0 1em; }
   gap: .75rem;
   margin-top: 1rem;
 }
-/* Grid centraliza ícone + texto como um bloco único,
+/* O ícone flui junto com a primeira linha do texto e tudo centraliza,
    mesmo quando o texto quebra em duas linhas */
 .pdfs .pdf-link{
   margin-top: 0;
   flex: 1 1 240px;
-  display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-  justify-content: center;
-  column-gap: .5rem;
+  display: block;
   text-align: center;
+  align-content: center;
+}
+.pdfs .pdf-link svg{
+  display: inline-block;
+  vertical-align: -0.25em;
+  margin-right: .35rem;
 }
 
 /* Card de instruções + botão para o Google Forms */
