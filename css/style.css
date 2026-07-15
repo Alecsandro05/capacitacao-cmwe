@@ -675,6 +675,20 @@ p{ margin: 0 0 1em; }
 }
 .pdf-link:hover{ border-color: var(--accent); }
 
+/* Grupo com mais de um PDF: lado a lado, empilhando quando falta espaço */
+.pdfs{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1rem;
+}
+.pdfs .pdf-link{
+  margin-top: 0;
+  flex: 1 1 240px;
+  justify-content: center;
+  text-align: center;
+}
+
 /* Card de instruções + botão para o Google Forms */
 .instruction-card{
   display: flex;
@@ -774,10 +788,11 @@ p{ margin: 0 0 1em; }
 .a11y-float:hover{ transform: scale(1.08); }
 /* Logo de acessibilidade (SVG preto): filtro deixa branca sobre o fundo azul */
 .a11y-float img{
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
   filter: brightness(0) invert(1);
+  
 }
 
 /* Com o alto contraste ativo, o botão fica amarelo e a logo volta a ser preta */
