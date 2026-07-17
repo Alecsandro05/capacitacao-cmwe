@@ -661,6 +661,30 @@ p{ margin: 0 0 1em; }
   height: 100%;
   border: 0;
 }
+/* Rótulo acima de cada vídeo quando o módulo tem mais de um */
+.video-label{
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--accent);
+  margin: 1.1rem 0 0;
+}
+/* Grupo de vídeos: lado a lado quando há espaço, empilhados no mobile */
+.videos{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: .5rem;
+}
+.videos .video-item{
+  flex: 1 1 200px;
+  min-width: 0;
+}
+.videos .video-label{
+  margin: 0 0 .5rem;
+}
+.videos .video-wrapper{
+  margin-top: 0;
+}
 .pdf-link{
   display: inline-flex;
   align-items: center;
