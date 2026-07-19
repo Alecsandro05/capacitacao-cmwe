@@ -759,6 +759,10 @@ p{ margin: 0 0 1em; }
   text-decoration: none;
 }
 .footer-credit:hover, .footer-credit:focus-visible{ text-decoration: underline; }
+.footer-support{
+  margin-top: .25rem;
+  font-size: .85rem;
+}
 /* Linha vertical separando o texto da logo */
 .site-footer img{
   display: block;
